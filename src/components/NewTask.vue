@@ -5,6 +5,7 @@
       class="form-control"
       placeholder="Neue Aufgabe"
       v-model="content"
+      v-focus="{color: 'green'}"
     />
     <small>Noch {{ numberOfCharsLeft }} Zeichen erlaubt</small>
     <div class="d-grid my-2">

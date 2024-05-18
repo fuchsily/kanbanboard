@@ -13,6 +13,7 @@
           :status="statusCard.status"
           :tasks="filteredTasks(statusCard.status)"
           @new-task="addTask"
+          @status-updated="updateStatus"
         >
         </StatusCard>
       </div>
@@ -97,6 +98,10 @@ export default {
       this.tasks.push(task);
       console.log(task);
     },
+    updateStatus(statusDO) {
+      const task = this.tasks.find((task) => task.id === Number(statusDO.taskId));
+      task.status = statusDO.newStatus;
+    }
   },
 };
 </script>
